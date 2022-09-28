@@ -38,7 +38,7 @@ const Home = () => {
                     <div className="cart"   data-aos="fade-left"
                                            data-aos-offset="500"
                                            data-aos-duration="8000">
-                    <h3>Player's Cart</h3>
+                    <h3>Player's Cart:- {cart.length}</h3>
                     {
                         cart?.map(player =>
                         

@@ -27,7 +27,7 @@ const handleBookMark = () =>{
     strCutout,
     strPlayer,
     idPlayer,
-    price:115,
+    quantity:1,
     bookmark:"true"
     };
     // console.log(info);
@@ -36,7 +36,11 @@ const handleBookMark = () =>{
    if(oldBookmark) {
     const isExist = oldBookmark.find( player => player.idPlayer === idPlayer);
     if(isExist){
-        alert('already Bookmarked');
+        // alert('already Bookmarked');
+        const updatedPrice = parseFloat(isExist.quantity);
+        const newUpdatePrice = updatedPrice+ 1;
+       isExist.quantity= newUpdatePrice;
+        localStorage.setItem("Bookmark",JSON.stringify([oldBookmark]));
         return;
     }
     else{
